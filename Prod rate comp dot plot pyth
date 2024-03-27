@@ -1,0 +1,14 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+import pandas as pd
+data = pd.DataFrame({'Product Name': ['A', 'B', 'C', 'D', 'E'],
+                     'Ratings': [4.5, 3.8, 4.2, 4.7, 3.9]})
+
+sns.set(style="whitegrid")
+plt.figure(figsize=(10, 6))
+sns.stripplot(x='Ratings', y='Product Name', data=data, size=10, jitter=True, palette="Set2", linewidth=1)
+plt.title('Product Ratings Comparison')
+plt.xlabel('Ratings')
+plt.ylabel('Product Name')
+plt.show()

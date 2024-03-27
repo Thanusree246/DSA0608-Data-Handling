@@ -1,0 +1,13 @@
+library(ggplot2)
+
+months <- c('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')
+sales <- c(20000, 25000, 28000, 30000, 32000, 35000, 38000, 40000, 42000, 45000, 48000, 50000)
+
+
+sales_data <- data.frame(months, sales)
+
+ggplot(sales_data, aes(x=months, y=sales)) +
+  geom_line(color="skyblue") +
+  geom_point(color="blue") +
+  labs(x="Month", y="Sales ($)", title="Monthly Sales Performance") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))

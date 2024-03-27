@@ -1,0 +1,8 @@
+
+dates <- as.Date(c("2023-01-01", "2023-01-02", "2023-01-03", "2023-01-04", "2023-01-05"))
+page_views <- c(1500, 1600, 1400, 1650, 1800)
+click_through_rate <- c(2.3, 2.7, 2.0, 2.4, 2.6)
+
+barplot(page_views, names.arg = dates, main = "Page Views", xlab = "Date", ylab = "Page Views")
+
+barplot(click_through_rate, names.arg = dates, main = "Click-through Rate", xlab = "Date", ylab = "Click-through Rate (%)")

@@ -1,0 +1,17 @@
+# Sample exam scores data
+exam_scores <- c(75, 80, 85, 90, 92, 95, 100, 100, 100, 105, 110)
+
+# Function to calculate ECDF
+ecdf <- function(data) {
+  x <- sort(data)
+  y <- seq(1, length(data)) / length(data)
+  return(list(x = x, y = y))
+}
+
+# Calculate ECDF
+ecdf_data <- ecdf(exam_scores)
+
+# Plot ECDF
+plot(ecdf_data$x, ecdf_data$y, type = 's', xlab = 'Exam Score', ylab = 'Cumulative Probability',
+     main = 'ECDF of Exam Scores', col = 'blue', lwd = 2)
+grid()

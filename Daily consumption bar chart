@@ -1,0 +1,29 @@
+# Data
+age_groups <- c('0-10', '11-30', '31-50', '51-80')
+dairy <- c(50, 35, 25, 40)
+staple_food <- c(30, 45, 55, 40)
+high_calorie_food <- c(10, 15, 13, 4)
+supplements <- c(10, 5, 7, 16)
+
+# Create a matrix for the stacked bar chart
+data_matrix <- rbind(dairy, staple_food, high_calorie_food, supplements)
+
+# Define colors for each category
+colors <- c('lightblue', 'lightgreen', 'orange', 'pink')
+
+# Create the stacked bar chart
+barplot(data_matrix, 
+        beside = TRUE, 
+        col = colors, 
+        names.arg = age_groups, 
+        xlab = 'Age Groups', 
+        ylab = 'Daily Consumption',
+        main = 'Daily Consumption of Different Types of Food by Age Group',
+        legend.text = c('Dairy', 'Staple Food', 'High-Calorie Food', 'Supplements'),
+        args.legend = list(x = 'topright', bty = 'n'))
+
+# Add legend
+legend('topright', 
+       legend = c('Dairy', 'Staple Food', 'High-Calorie Food', 'Supplements'), 
+       fill = colors, 
+       bty = 'n')

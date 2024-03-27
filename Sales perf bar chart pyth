@@ -1,0 +1,26 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample Data
+import pandas as pd
+data = pd.DataFrame({'Product Category': ['Category A', 'Category B', 'Category C', 'Category A', 'Category B', 'Category C'],
+                     'Sales': [50000, 60000, 45000, 55000, 62000, 48000],
+                     'Year': [2020, 2020, 2020, 2021, 2021, 2021]})
+
+# Grouped bar chart using Matplotlib
+plt.figure(figsize=(10, 6))
+
+categories = data['Product Category'].unique()
+bar_width = 0.35
+index = np.arange(len(categories))
+
+for year in data['Year'].unique():
+    year_data = data[data['Year'] == year]
+    plt.bar(index + bar_width * (year - data['Year'].min()), year_data['Sales'], bar_width, label=str(year))
+
+plt.xlabel('Product Category')
+plt.ylabel('Sales')
+plt.title('Sales Performance by Product Category')
+plt.xticks(index + bar_width, categories)
+plt.legend()
+plt.show()

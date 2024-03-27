@@ -1,0 +1,12 @@
+
+data <- data.frame(Product_Name = c('A', 'B', 'C', 'D', 'E'),
+                   Ratings = c(4.5, 3.8, 4.2, 4.7, 3.9))
+
+
+library(ggplot2)
+ggplot(data, aes(x = Ratings, y = Product_Name)) +
+  geom_point(size = 4, color = "blue") +
+  labs(title = "Product Ratings Comparison",
+       x = "Ratings",
+       y = "Product Name") +
+  theme_minimal()

@@ -1,0 +1,4 @@
+months <- c("January", "February", "March", "April", "May")
+sales <- c(15000, 18000, 22000, 20000, 23000)
+
+barplot(sales, names.arg = months, main = "Monthly Sales", xlab = "Month", ylab = "Sales ($)")

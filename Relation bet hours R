@@ -1,0 +1,13 @@
+library(ggplot2)
+
+# Data
+categories <- c('Rent', 'Groceries', 'Utilities', 'Entertainment')
+expenses <- c(30, 25, 20, 25)
+data <- data.frame(categories, expenses)
+
+# Create pie chart
+ggplot(data, aes(x="", y=expenses, fill=categories)) +
+  geom_bar(stat="identity", width=1) +
+  coord_polar("y", start=0) +
+  theme_void() +
+  labs(title="Household Budget Expenses")

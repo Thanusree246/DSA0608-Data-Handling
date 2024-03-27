@@ -1,0 +1,12 @@
+import matplotlib.pyplot as plt
+
+# Data
+categories = ['Rent', 'Groceries', 'Utilities', 'Entertainment']
+expenses = [30, 25, 20, 25]
+
+# Create pie chart
+plt.figure(figsize=(8, 6))
+plt.pie(expenses, labels=categories, autopct='%1.1f%%', startangle=140)
+plt.title('Household Budget Expenses')
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.show()

@@ -1,0 +1,11 @@
+# Data
+product_names <- c('Product A', 'Product B', 'Product C', 'Product D', 'Product E')
+quantities <- c(250, 175, 300, 200, 220)
+
+# Create pie chart
+pie(quantities, labels = product_names, main = "Product Inventory", col = rainbow(length(product_names)))
+
+# Add percentage labels
+percent_labels <- round(quantities/sum(quantities) * 100, 1)
+percent_labels <- paste(percent_labels, "%", sep = "")
+legend("topright", legend = paste(product_names, ": ", percent_labels, sep = ""), cex = 0.8, fill = rainbow(length(product_names)))

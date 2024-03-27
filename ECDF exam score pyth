@@ -1,0 +1,21 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+exam_scores = np.array([75, 80, 85, 90, 92, 95, 100, 100, 100, 105, 110])
+
+def ecdf(data):
+    """Compute ECDF for a one-dimensional array of measurements."""
+    n = len(data)
+    x = np.sort(data)
+    y = np.arange(1, n + 1) / n
+    return x, y
+
+x, y = ecdf(exam_scores)
+
+plt.figure(figsize=(8, 5))
+plt.plot(x, y, marker='.', linestyle='none')
+plt.xlabel('Exam Score')
+plt.ylabel('Cumulative Probability')
+plt.title('ECDF of Exam Scores')
+plt.grid(True)
+plt.show()

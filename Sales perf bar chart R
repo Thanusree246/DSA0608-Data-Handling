@@ -1,0 +1,12 @@
+
+data <- data.frame(Product_Category = c('Category A', 'Category B', 'Category C', 'Category A', 'Category B', 'Category C'),
+                   Sales = c(50000, 60000, 45000, 55000, 62000, 48000),
+                   Year = c(2020, 2020, 2020, 2021, 2021, 2021))
+
+library(ggplot2)
+ggplot(data, aes(x = Product_Category, y = Sales, fill = factor(Year))) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Sales Performance by Product Category",
+       x = "Product Category",
+       y = "Sales",
+       fill = "Year")

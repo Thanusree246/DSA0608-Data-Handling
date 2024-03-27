@@ -1,0 +1,19 @@
+# Data
+product_names <- c('Product A', 'Product B', 'Product C', 'Product D', 'Product E')
+quantities <- c(250, 175, 300, 200, 220)
+
+# Line chart
+plot(quantities, type = "o", col = "blue", xlab = "Product ID", ylab = "Quantity Available", main = "Product Inventory - Line Chart")
+lines(quantities, col = "blue")
+points(quantities, col = "blue")
+
+# Stacked bar chart
+barplot(matrix(quantities, ncol = 1), col = rainbow(length(quantities)), main = "Product Inventory - Stacked Bar Chart", xlab = "Product ID", ylab = "Quantity Available", names.arg = product_names, legend.text = product_names)
+
+# Scatter plot
+product_ids <- 1:length(product_names)
+plot(product_ids, quantities, col = "red", main = "Product Inventory - Scatter Plot", xlab = "Product ID", ylab = "Quantity Available")
+abline(lm(quantities ~ product_ids), col = "blue")
+
+# Pie chart
+pie(quantities, labels = product_names, main = "Product Inventory - Pie Chart", col = rainbow(length(product_names)))

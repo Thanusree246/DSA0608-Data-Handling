@@ -1,0 +1,23 @@
+library(ggplot2)
+
+# Define the dataset
+subjects <- c('Math', 'Science', 'English', 'History')
+correlation_matrix <- matrix(c(1.0, 0.8, 0.6, 0.4,
+                               0.8, 1.0, 0.7, 0.5,
+                               0.6, 0.7, 1.0, 0.3,
+                               0.4, 0.5, 0.3, 1.0), nrow=4, byrow=TRUE)
+
+# Convert correlation matrix to dataframe
+correlation_df <- as.data.frame(correlation_matrix)
+colnames(correlation_df) <- subjects
+rownames(correlation_df) <- subjects
+
+# Convert dataframe to long format for ggplot
+correlation_df_long <- reshape2::melt(correlation_df)
+
+# Create heatmap
+ggplot(correlation_df_long, aes(x=Var1, y=Var2, fill=value)) +
+  geom_tile() +
+  scale_fill_gradient(low="yellow", high="blue") +
+  labs(title="Correlation Matrix of Exam Scores", x="Subjects", y="Subjects") +
+  theme_minimal()

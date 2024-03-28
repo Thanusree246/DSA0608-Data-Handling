@@ -1,0 +1,13 @@
+library(ggplot2)
+
+# Define the dataset
+data <- data.frame(
+    Region = c('North', 'North', 'South', 'South', 'East', 'East', 'West', 'West'),
+    Product_Category = c('Electronics', 'Clothing', 'Electronics', 'Clothing', 'Home Goods', 'Clothing', 'Electronics', 'Home Goods'),
+    Customer_Segment = c('Retail', 'Wholesale', 'Retail', 'Retail', 'Wholesale', 'Retail', 'Wholesale', 'Wholesale')
+)
+
+ggplot(data) +
+  geom_mosaic(aes(x=product(Product_Category, Customer_Segment), fill=Region)) +
+  labs(title="Product Sales Analysis") +
+  theme_minimal()

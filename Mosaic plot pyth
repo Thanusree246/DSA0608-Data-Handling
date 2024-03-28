@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+from statsmodels.graphics.mosaicplot import mosaic
+import pandas as pd
+
+data = {
+    'Region': ['North', 'North', 'South', 'South', 'East', 'East', 'West', 'West'],
+    'Product Category': ['Electronics', 'Clothing', 'Electronics', 'Clothing', 'Home Goods', 'Clothing', 'Electronics', 'Home Goods'],
+    'Customer Segment': ['Retail', 'Wholesale', 'Retail', 'Retail', 'Wholesale', 'Retail', 'Wholesale', 'Wholesale']
+}
+
+
+df = pd.DataFrame(data)
+
+mosaic(df, ['Region', 'Product Category', 'Customer Segment'], gap=0.01, title='Product Sales Analysis')
+plt.show()
